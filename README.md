@@ -42,9 +42,9 @@ SimpleBanner provides a basic example of how to use the CommuteStream SDK.
 5. On the right side of the screen click "Edit mediation" link next to the ad unit you wish to add CommuteStream to.
 6. Click "+ New ad network"
 7. Click "+ Custom Event", then enter the following in the three fields that pop up, and click Continue:
-    >Class Name: com.commutestream.ads.Banner
-    >Label: CommuteStream
-    >Parameter: <Your Ad Unit ID obtained in step 1>
+    Class Name: com.commutestream.ads.Banner
+    Label: CommuteStream
+    Parameter: <Your Ad Unit ID obtained in step 1>
 8. Adjust the Default eCPM for CommuteStream to be the largest amount. Since we pay you the most you will want our ads to have first priority. 
 9. If your app has more than one ad unit, repeat steps 6-9
 
