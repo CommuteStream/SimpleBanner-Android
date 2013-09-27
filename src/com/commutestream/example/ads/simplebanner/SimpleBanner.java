@@ -28,7 +28,7 @@ public class SimpleBanner extends Activity {
 	private AdView adView;
 
 	// Your AdMob Ad ID; provided from the AdMob web interface
-	final String ADMOB_AD_ID = "ca-app-pub-2799280727395657/2144938121";
+	final String ADMOB_AD_ID = "INSERT_YOUR_ADMOB_AD_ID_HERE";
 
 	/** Called when the activity is first created. */
 	@Override
