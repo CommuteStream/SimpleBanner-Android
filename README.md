@@ -1,13 +1,14 @@
+## Introduction
 SimpleBanner provides a basic example of how to use the CommuteStream SDK.
 
-# Requirements:
+## Requirements:
 - Android SDK 3.2 or higher
 - Google AdMob Ads SDK for Android
 - CommuteStream SDK for Android
 - Working AdMob Ad ID
 - Eclipse (recommended)
 
-# Getting started with SimpleBanner in Eclipse
+## Getting started with SimpleBanner in Eclipse
 
 #### Download or clone SimpleBanner from GitHub.
 1. https://github.com/CommuteStream/simplebanner.git
