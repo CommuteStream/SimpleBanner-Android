@@ -33,17 +33,19 @@ SimpleBanner provides a basic example of how to use the CommuteStream SDK.
 
 #### Add the android-support-v4.jar to your Eclipse Project.
 1. The android-support-v4.jar is included in the Android SDK in the \extras\android\support\v4 folder. Visit http://developer.android.com/sdk/compatibility-library.html#Downloading for more information.
-2.Include this jar the same way as the Google AdMob Ads jar in step 2s.
+2. Include this jar the same way as the Google AdMob Ads jar in step 2.
  
-#### Insert your AdMob publisher ID into the application.
-1. In SimpleBanner.java, replace "INSERT_YOUR_ADMOB_AD_ID_HERE" with a valid Admob Ad ID.
+#### Insert your AdMob Ad Unit ID into the application.
+1. Log into the AdMob interface (https://apps.admob.com/).
+2. Setup a new **+ New ad unit** or find an Ad Unit ID that you already have setup.
+3. In SimpleBanner.java, replace "INSERT_YOUR_ADMOB_AD_UNIT_ID_HERE" with the valid Ad unit ID.
 
 #### Add CommuteStream as an AdMob ad network
-1. Go to http://commutestream.com/publisherinterface/app. After signing in you will be provided with an Ad Unit ID. Leave the browser window open, as we will need this ID in step 8 below.
+1. Go to http://commutestream.com/publisherinterface/app. After signing in you will be provided with a CommuteStream Ad Unit ID. Leave the browser window open, as we will need this ID in step 8 below.
 2. Log into the AdMob interface (https://apps.admob.com/).
 3. Click on **Monetize** tab of main menu. 
-4. Click on **All apps** in left column, then select the app you want to add CommuteStream to.
-5. On the right side of the screen click **Edit mediation** link next to the ad unit you used for INSERT_YOUR_ADMOB_AD_ID_HERE.
+4. Click on **All apps** in left column, then select the app that contains the ad unit you are using.
+5. On the right side of the screen click **Edit mediation** link next to the ad unit you are using.
 6. Click **+ New ad network**
 7. Click **+ Custom Event**, then enter the following in the three fields that pop up, and click Continue:
 
