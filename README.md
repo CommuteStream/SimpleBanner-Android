@@ -11,11 +11,14 @@ SimpleBanner provides a basic example of how to use the CommuteStream SDK.
 
 #### Download or clone SimpleBanner from GitHub.
 1. https://github.com/CommuteStream/simplebanner.git
+2. In Eclipse, Click the **File** menu, and select **Import**.
+3. Select **Existing Android Code Into Workspace**, click **Next**.
+4. Click the **Browse** button and select the base directory of the source code. 
+5. Click **Finish**.
 
-#### In Eclipse, Click the File menu, and select Import.
-1. Select **Existing Android Code Into Workspace**, click Next.
-2. Click the **Browse** button and select the base directory of the source code. 
-3. Click **Finish**.
+#### Make sure you're compiling against at least Android v3.2 
+1. Right click on your app project in Eclipse and select **Properties**.
+2. Select **Android** and make sure you have selected a version greater that 3.2 under **Project Build Target**. 
 
 #### Add the Google AdMob Ads Jar to your Eclipse Project.
 1. Right click on your app project in Eclipse and select **Properties**.
