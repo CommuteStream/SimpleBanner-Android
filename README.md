@@ -24,11 +24,15 @@ Requirements:
 - Eclipse (recommended)
 
 Getting started with SimpleBanner in Eclipse:
-1. Create an Android project from existing source.
-   - Create a new Android Project in Eclipse, and select "Create project from
-     existing source."
-   - Browse to the base directory of the source code.  The Project Name and
-     Target name should be populated.  Click Finish.
+
+1. Download or clone SimpleBanner from GitHub.
+- https://github.com/CommuteStream/simplebanner.git
+
+2. In Eclipse, Click the File menu, and select Import.
+- Select "Existing Android Code Into Workspace", click Next.
+- Click the Browse button and select the base directory of the source code. 
+- Click Finish.
+
 2. Add the Google AdMob Ads Jar to your Eclipse Project.
    - Right click on your app project in Eclipse and select "Properties.
    - Select "Java Build Path" and the "Libraries" tab. 
@@ -41,7 +45,9 @@ Getting started with SimpleBanner in Eclipse:
    - The android-support-v4.jar is included in the Android Compatibility
      package.  For instructions on how to download this package, visit
      http://developer.android.com/sdk/compatibility-library.html#Downloading.
+     \extras\android\support\v4
    - Include this jar the same way as the Google AdMob Ads jar in step 2s.
+5. 
 5. Insert your AdMob publisher ID into the application.
    - In the admob_id string in res/values/strings.xml, replace the
      "INSERT_YOUR_ADMOB_AD_ID_HERE" text with your publisher ID.
