@@ -1,26 +1,10 @@
-========================================================================
-Copyright 2013, CommuteStream. All Rights Reserved.
+SimpleBanner provides a basic example of how to use the CommuteStream SDK.
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-========================================================================
-
-SimpleBanner is a basic example of how to use the CommuteStream SDK.
-
-Requirements:
+# Requirements:
 - Android SDK 3.2 or higher
 - Google AdMob Ads SDK for Android
 - CommuteStream SDK for Android
-- AdMob Ad ID
+- Working AdMob Ad ID
 - Eclipse (recommended)
 
 # Getting started with SimpleBanner in Eclipse
@@ -58,9 +42,9 @@ Requirements:
 5. On the right side of the screen click "Edit mediation" link next to the ad unit you wish to add CommuteStream to.
 6. Click "+ New ad network"
 7. Click "+ Custom Event", then enter the following in the three fields that pop up, and click Continue:
->Class Name: com.commutestream.ads.Banner
->Label: CommuteStream
->Parameter: <Your Ad Unit ID obtained in step 1>
+    >Class Name: com.commutestream.ads.Banner
+    >Label: CommuteStream
+    >Parameter: <Your Ad Unit ID obtained in step 1>
 8. Adjust the Default eCPM for CommuteStream to be the largest amount. Since we pay you the most you will want our ads to have first priority. 
 9. If your app has more than one ad unit, repeat steps 6-9
 
