@@ -1,12 +1,12 @@
 ## Introduction
-SimpleBanner provides a basic example of how to use the CommuteStream SDK.
+SimpleBanner provides a basic example of how to use the CommuteStream SDK. These instructions are designed for Eclipse users.
 
 ## Requirements:
 - Android SDK 3.2 or higher
-- Google AdMob Ads SDK for Android
+- Google Play Services SDK and Google Mobile Ads SDK for Android
 - CommuteStream SDK for Android
 - Working AdMob Ad ID
-- Eclipse (recommended)
+- Eclipse 
 
 ## Getting started with SimpleBanner in Eclipse
 
@@ -21,20 +21,22 @@ SimpleBanner provides a basic example of how to use the CommuteStream SDK.
 1. Right click on your app project in Eclipse and select **Properties**.
 2. Select **Android** and make sure you have selected a version greater that 3.2 under **Project Build Target**. 
 
-#### Add the Google AdMob Ads Jar to your Eclipse Project.
-1. Right click on your app project in Eclipse and select **Properties**.
-2. Select **Java Build Path** and the **Libraries** tab. 
-3. Click **Add External JARs...** to add the Google AdMob Ads Jar.
-4. Select the **Order and Export** tab; check the box next to the Jar file.
+#### Add the Google Play Services and Mobile Ads SDK to your Eclipse Project.
+1. If you havn't already, install Google Play Services: https://developer.android.com/sdk/installing/adding-packages.html
+2. Right click on your app project in Eclipse and select Properties.
+3. Select Android and then click Add.... Find the google-play-services_lib project and select OK to add the Google Play services library.
 
 #### Add the CommuteStream Jar file to your Eclipse Project.
 1. Download the jar file from https://commutestreamdev.com/downloads/commutestream.jar
-2. Include this jar the same way as the Google AdMob Ads jar in step 2.
+2. Right click on your app project in Eclipse and select **Properties**.
+3. Select **Java Build Path** and the **Libraries** tab. 
+4. Click **Add External JARs...** to add the CommuteStream Jar file.
+5. Select the **Order and Export** tab; check the box next to the Jar file.
 
 #### Add the android-support-v4.jar to your Eclipse Project.
 1. The android-support-v4.jar is included in the Android SDK in the \extras\android\support\v4 folder. Visit http://developer.android.com/sdk/compatibility-library.html#Downloading for more information.
-2. Include this jar the same way as the Google AdMob Ads jar in step 2.
- 
+2. Include this jar the same way as the CommuteStream jar above.
+
 #### Insert your AdMob Ad Unit ID into the application.
 1. Log into the AdMob interface (https://apps.admob.com/).
 2. Setup a new **+ New ad unit** or find an Ad Unit ID that you already have setup.

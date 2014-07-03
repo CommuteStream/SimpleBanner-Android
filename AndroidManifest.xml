@@ -3,8 +3,8 @@
           package="com.commutestream.example.ads.simplebanner"
           android:versionCode="1"
           android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="8"
-              android:targetSdkVersion="15" />
+    <uses-sdk android:minSdkVersion="9"
+              android:targetSdkVersion="16" />
 
     <application android:icon="@drawable/icon" android:label="@string/app_name">
         <activity android:name=".SimpleBanner"
@@ -14,9 +14,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name="com.google.ads.AdActivity"
+        <activity android:name="com.google.android.gms.ads.AdActivity"
                   android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+        <meta-data android:name="com.google.android.gms.version"
+           android:value="@integer/google_play_services_version" />
     </application>
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>

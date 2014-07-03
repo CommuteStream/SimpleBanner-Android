@@ -1,8 +1,8 @@
 package com.commutestream.example.ads.simplebanner;
 
-import com.google.ads.AdRequest;
-import com.google.ads.AdSize;
-import com.google.ads.AdView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
 
 import com.commutestream.ads.*;
 
@@ -28,7 +28,7 @@ public class SimpleBanner extends Activity {
 	private AdView adView;
 
 	// Your AdMob Ad ID; provided from the AdMob web interface
-	final String ADMOB_AD_ID = "INSERT_YOUR_ADMOB_AD_ID_HERE";
+	final String ADMOB_AD_ID = "INSERT_YOUR_ADMOB_AD_UNIT_ID_HERE";
 
 	/** Called when the activity is first created. */
 	@Override
@@ -37,65 +37,61 @@ public class SimpleBanner extends Activity {
 		setContentView(R.layout.main);
 
 		// Create an adView and add it to the layout
-		adView = new AdView(this, AdSize.BANNER, ADMOB_AD_ID);
+		adView = new AdView(this);
+		adView.setAdSize(AdSize.BANNER);
+		adView.setAdUnitId(ADMOB_AD_ID);
+
 		LinearLayout layout = (LinearLayout) findViewById(R.id.linearLayout);
 		layout.addView(adView);
 
+		// Setup some location stuff that we'll use in an example below
+		LocationManager locationManager = (LocationManager) this
+				.getSystemService(Context.LOCATION_SERVICE);
+		String NetworkLocationProvider = LocationManager.NETWORK_PROVIDER;
+		Location lastKnownLocation = locationManager
+				.getLastKnownLocation(NetworkLocationProvider);
+
 		// Initializes the CommuteStream SDK
 		CommuteStream.init();
+
+		// Set your theme to light or dark depending on the look of your app
+		CommuteStream.setTheme("dark");
 
 		// Tells CommuteStream that we are developing and that it should
 		// serve a test banner, rather than real ads.
 		// This line should be commented or removed before releasing an app.
 		CommuteStream.setTesting();
-		
+
 		// Create a new AdMob adRequest
-		final AdRequest adRequest = new AdRequest();
-
-		// If your testing you might want to add your device below
-		// adRequest.addTestDevice(AdRequest.TEST_EMULATOR);
-		// adRequest.addTestDevice("C1E53EE71C84E96A028AB7CE4F626483");
-
-		// Let's pretend that our app just displayed some arrival time 
-		// information for two different train stops, and also diplayed
-		// some alert information for the "Red" line route. This is how
-		// we would tell CommuteStream about it.
-		CommuteStream.trackingDisplayed("CTA","Red","41420");
-		CommuteStream.trackingDisplayed("CTA","Red","41450");
-		CommuteStream.alertDisplayed("cta", "Red", null);
-
-		// Acquire a reference to the system Location Manager
-		LocationManager locationManager = (LocationManager) this
-				.getSystemService(Context.LOCATION_SERVICE);
-
-		String NetworkLocationProvider = LocationManager.NETWORK_PROVIDER;
-
-		// Grab the last known location from the NETWORK_PROVIDER.
-		Location lastKnownLocation = locationManager
-				.getLastKnownLocation(NetworkLocationProvider);
-
-		// This is how we normally give AdMob the location
-		adRequest.setLocation(lastKnownLocation);
-
-		// And this is how we pass the location to CommuteStream
-		CommuteStream.setLocation(lastKnownLocation);
+		final AdRequest adRequest = new AdRequest.Builder()
+				.addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+				// .addTestDevice("INSERT_YOUR_HASHED_DEVICE_ID_HERE")
+				.setLocation(lastKnownLocation).build();
 
 		// Start loading the ad in the background.
 		adView.loadAd(adRequest);
 
 		/*
 		 * CommuteStream pays you more when you supply more information about
-		 * your users. Specifically the user's location, what transit information
-		 * they are viewing on the app, and when they do things like bookmarking
-		 * or planning a trip.
+		 * your users. Most importantly, what transit information they are viewing,
+		 * and also location, and when they do things like bookmarking or planning a trip.
 		 */
 
-		// Define a listener that responds to location updates
+		// Let's pretend that our app just displayed some arrival time
+		// information for two different train stops, and also displayed
+		// some alert information for the "Red" line route. This is how
+		// we would tell CommuteStream about it.
+		CommuteStream.trackingDisplayed("CTA", "Red", "41420"); // Addison
+		CommuteStream.trackingDisplayed("CTA", "Red", "41450"); // Chicago
+		CommuteStream.alertDisplayed("cta", "Red", null);
+
+		// And this is how we pass the location to CommuteStream
+		CommuteStream.setLocation(lastKnownLocation);
+
+		// And here is how we pass an updated location if it changes
 		LocationListener locationListener = new LocationListener() {
 			public void onLocationChanged(Location location) {
-				// When a new location is found we update AdMob and
-				// CommuteStream
-				adRequest.setLocation(location);
+				// When a new location is found we update CommuteStream
 				CommuteStream.setLocation(location);
 
 				// Do some other stuff with the new location
