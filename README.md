@@ -1,3 +1,5 @@
+#This Eclipse project is outdated. Please refer to the Android Studio app for a more current example of how to use the CommuteStream SDK: https://github.com/CommuteStream/SimpleBanner-AndroidStudio
+
 ## Introduction
 SimpleBanner provides a basic example of how to use the CommuteStream SDK. These instructions are designed for Eclipse users.
 
